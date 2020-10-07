@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Flag Archive Download Form</title>
+</head>
+<body>
+<div id="page">
+<header>
+<h1>Welcome to the Flag Archive Download form!</h1>
+<h2>Please provide a password to secure your archive</h2>
+</header>
+<br/>The archive can be accessed using a free tool called SteganPEG. The tool may throw some errors during the decryption process, but those can be safely ignored.<br/><br/>
+<form action="archive_retrieval.php" method="get">
+  <label for="uname">UserName:</label>
+  <input type="text" id="uname" name="uname"/><br><br>
+  <label for="lname">Archive Password:</label>
+  <input type="password" id="pass" name="pass"/><br><br>
+  <input type="submit" value="Submit"/>
+</form>
+</div>
+</body>
+</html>
