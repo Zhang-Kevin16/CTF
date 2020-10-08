@@ -1,0 +1,8 @@
+*.rep
+*.lock*
+*.gpr
+*.exe
+*.o
+*.xml
+*.html
+pico/2020/
