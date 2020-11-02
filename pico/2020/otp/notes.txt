@@ -1,0 +1,1 @@
+Valid character lists = [0-9, a-f]. 100 characters. Possible bruteforce by checking one be one. Input space is 16 characters. Maximum 16*100 iterations.
