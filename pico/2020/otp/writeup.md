@@ -4,17 +4,17 @@ For the challenge we are given a binary and a text file that holds the encrypted
 
 Once we open up the binary in our favourite disassembler we see a interesting set of strings in the binary.
 
-![Alt text](./strings.png)
+![Alt text](strings.png)
 
 Considering that the long string is near the string that mentions getting the key we should see what the long string is used for.
 
-![Alt text](./decompiled.png)
+![Alt text](decompiled.png)
 
 Using Ghidra to decompile the binary we can see that the long string is being checked against our input string after it has been scrambled by the program. My first instinct was to work backwards from the long string to see what our input string could be but that was not possible since the characters are being bitwise ANDed with `0xF` which means we only have the lower 4 bits of the input character.
 
 But if you were to look at the `valid_char()` function note that the valid inputs are only from `0-9` and `a-f` which means we have a total of 16 possible inputs.
 
-![Alt text](./valid_char.png)
+![Alt text](valid_char.png)
 
 This means that for each character in the output there is 16 possibilities for the input character so for the 100 character key there is only 1600 possibilities which is easily brute forced by selecting each input choice and checking if it matches the corresponding character. Here is the python script.
 
