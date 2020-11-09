@@ -48,3 +48,7 @@ Open this up the binary in your favourite disassembler and then patch out `call 
 Run the binary and there is the flag!
 
 `nactf{d1d_y0u_kn0w_y0u_ju5t_c4lcul4t3d_th3_66th_c4t4l4n_numb3r}`
+
+# PS
+
+I just wanted to mention while on the last step of this problem I spent a couple hours stuck because for some reason I thought the power operator in python was `^` so I was doing `5632681584560312734993915705849145100%(2^64)` instead of `5632681584560312734993915705849145100%(2**64)`...
