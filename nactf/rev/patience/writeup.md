@@ -10,7 +10,7 @@ If we immediately try to run the program it will just hang and not do anything. 
 One interesting thing is that the call to 0x1053 isn't really a traditional call. But what is even more interesting is the fact 0x1053 is a recursive function which probably explains why the program takes so long to run.
 My initial instinct was just to jump over that recursive function.  
 ![screenshot](jump.png)  
-Nope. However, it does print out something which is likely the flag. Note that right after our recursive function we move it into `rdi` which means that the result of the print is likely dependent on the result of the recursive function. So we have to figure out what the recursive function is doing.
+Nope. However, it does print out something which is likely the flag. Note that right after our recursive function we move the result into `rdi` which means that the result of the print is likely dependent on the result of the recursive function. So we have to figure out what the recursive function is doing.
 
 # Recursive function breakdown
 
