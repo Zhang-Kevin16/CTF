@@ -42,7 +42,7 @@ If we ignore the `n`'s that yield zeroes and plug that sequence into Google it t
 
 # Patch the binary
 
-Open this up the binary in your favourite disassembler and then path out `call 0x1053` with `mov rdi, 15620537638032369420`. Remember to nop out everything else before the next call.
+Open this up the binary in your favourite disassembler and then patch out `call 0x1053` with `mov rdi, 15620537638032369420`. Remember to nop out everything else before the next call.
 ![screenshot](patched.png)
 
 Run the binary and there is the flag!
