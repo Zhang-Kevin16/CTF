@@ -1,4 +1,4 @@
-# Pitter, Patter, Platters
+# Pitter, Patter, Platters picoCTF 2020 Mini-Competition
 
 We are given a file called `suspicious.dd.sda1`. A quick Google search tells us that this is a disk image file which fits the title of the challenge. Trying to actually mount it to my computer didn't work out well but luckily 7-zip is actually capable of opening disk image files. Here are the contents of the disk image.
 
