@@ -19,7 +19,7 @@ int main(void)
 ```
 Now the vulnerability is a classic buffer overflow but the problem is that this is all there is in the binary. There isn't any libc addresses in the stack or in any of the registers when we return. Since we can't find an address leak that means we can't just find the address of `system()` and create a rop chain using that. After some digging I was able to find that the attack is called a ret2dlresolve. Here is a blog with more info about that: https://ypl.coffee/dl-resolve/  
 
-Now what we could do is write a ret2dlresolve payload by hand such as the one [here]. No thanks. Fortunately, pwntools has a ret2dlsresolve module that will automatically generate the payloads for you. So our payload ends up being something like this:
+Now what we could do is write a ret2dlresolve payload by hand such as the one [here](https://gist.github.com/ricardo2197/8c7f6f5b8950ed6771c1cd3a116f7e62). No thanks. Fortunately, pwntools has a ret2dlsresolve module that will automatically generate the payloads for you. So our payload ends up being something like this:
 
 ```
 from pwntools import *
@@ -69,7 +69,3 @@ So just aim this at the server and ye shall receive the flag.
 `utflag{2_linker_problems_in_one_ctf?8079235}`
 
 It's pretty cool that we can still call libc functions without the use of address leaks. This exploit will definitely be something that I keep in mind for the future. Although it was really simple for this challenge due to no PIE which probably simplified where we could put the dlpayload. Also pwntools is an awesome tool and thank god it exists.
-
-
-
-[here]: (https://gist.github.com/ricardo2197/8c7f6f5b8950ed6771c1cd3a116f7e62)
